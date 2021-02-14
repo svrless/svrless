@@ -1,6 +1,6 @@
 # SVRLESS
 
-Serverless framework for Rails developers.
+Serverless framework for Rails developers. Very much still in very early development. A roadmap will be published soon.
 
 ## Required
 
