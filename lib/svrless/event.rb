@@ -20,11 +20,12 @@ module Event
     end
 
     def generate(events, resource)
-      puts "generating"
+      puts "Generating resource..."
       # make_function_files
       output = File.open("template.yaml", "w")
       output << main_representation(events, resource)
       output.close
+      puts "DONE!"
     end
 
     def main_representation(events, resource)
