@@ -34,7 +34,7 @@ To create a new svrless project
     
     $ svrless
 
-    # uncomment the posts resource in routes 
+    # uncomment the resources in routes
 
     $ ruby config/routes.rb 
 
@@ -45,6 +45,14 @@ To create a new svrless project
     $ sam local start-api
 
     $ make a POST request to http://localhost:3000/posts to see your lambda in action
+
+### Routes
+
+The routes file accepts a list of resources in their singular form i.e
+
+`resources :post, :comment, :user`
+
+This will create controllers for those resources with routing mechanics in the SAM validated template.yaml.
 
 ## Development
 

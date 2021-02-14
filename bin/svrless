@@ -25,9 +25,9 @@ File.open("config/routes.rb", "w") do |f|
   f.write "require 'svrless'\n"
   f.write "\n"
   f.write "class Routes\n"
-  f.write "  include Event\n"
+  f.write "  include ResourceGenerator\n"
   f.write "\n"
-  f.write "  # resource :post\n"
+  f.write "  # resources :post, :comment\n"
   f.write "end\n"
 end
 
