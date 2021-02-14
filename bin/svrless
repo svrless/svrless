@@ -1,0 +1,32 @@
+# frozen_string_literal: true
+
+#!/usr/bin/env ruby
+
+# require 'svrless'
+
+puts "Generating a SVRLESS application..."
+
+Dir.mkdir("app") unless Dir.exist?("app")
+Dir.mkdir("app/functions") unless Dir.exist?("app/functions")
+Dir.mkdir("app/shared") unless Dir.exist?("app/shared")
+Dir.mkdir("app/shared/ruby") unless Dir.exist?("app/shared/ruby")
+Dir.mkdir("app/shared/ruby/lib") unless Dir.exist?("app/shared/ruby/lib")
+Dir.mkdir("config") unless Dir.exist?("config")
+FileUtils.touch("template.yaml")
+FileUtils.touch("README.md")
+FileUtils.touch(".rubocop.yml")
+FileUtils.touch("Gemfile")
+FileUtils.touch("start-server.sh")
+FileUtils.touch("start-dev-server.sh")
+
+File.open("config/routes.rb", "w") do |f|
+  f.write "require 'event'\n"
+  f.write "\n"
+  f.write "class Routes\n"
+  f.write "  include Event\n"
+  f.write "\n"
+  f.write "  # resource :post\n"
+  f.write "end\n"
+end
+
+puts "DONE!"
